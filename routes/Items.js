@@ -2,6 +2,7 @@ const {Router} = require('express');
 const router = Router();
 const Item = require('../models/Item');
 const verifytoken = require('../middlewares/verifyTokens');
+// const multer = require('multer');
 
 
 router.get('/item/lostitem/new',verifytoken,(req,res)=>{
@@ -12,10 +13,11 @@ router.get('/item/founditem/new',verifytoken,(req,res)=>{
     res.render('newFoundItem',{req});
 })
 
-// create new lost item
+// create new lost item 
 
 router.post('/item/lostitem/new',verifytoken,async (req,res)=>{
-    const {name,desc,loc,date} = req.body;
+    const {name,desc,loc,date,img} = req.body;
+    // const img = req.body.img;
     let ty = false;
     let user = req.userId;
     await  Item.create({name,desc,loc,date,user,ty});
@@ -25,7 +27,13 @@ router.post('/item/lostitem/new',verifytoken,async (req,res)=>{
 // create new found item
 
 router.post('/item/founditem/new',verifytoken,async (req,res)=>{
-    const {name,desc,loc,date} = req.body;
+    // const {name,desc,loc,date,img} = req.body;
+    // let ty = true;
+    // let user = req.userId;
+    // await  Item.create({name,desc,loc,date,user,ty});
+    // res.status(200).redirect('/item/allitems');
+    const {name,desc,loc,date,img} = req.body;
+    // const img = req.body.img;
     let ty = true;
     let user = req.userId;
     await  Item.create({name,desc,loc,date,user,ty});
@@ -34,7 +42,7 @@ router.post('/item/founditem/new',verifytoken,async (req,res)=>{
 
 // fetch items
 
-router.get('/item/allitems',async (req,res)=>{
+router.get('/item/allitems',verifytoken,async (req,res)=>{
     const items = await Item.find();
     res.render('item',{items,req});
 })

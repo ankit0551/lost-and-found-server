@@ -1,15 +1,12 @@
 <%- include('./partials/header') %>
 <%- include('./partials/navbar') %>
-    <form action="/item/founditem/new" method="post" class="lost-form">
-        <div>
+    <form action="/item/founditem/new" method="post"  class="lost-form">
+        <div class="item-form-div">
             <div class="list">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <div class="list">
-                <label for="desc">Description</label>
-                <input type="text" id="desc" name="desc" required>
-            </div>
+            
             <div class="list">
                 <label for="loc">Location</label>
                 <input type="text" id="loc" name="loc" required>
@@ -18,8 +15,14 @@
                 <label for="date">Date</label>
                 <input type="text" id="name" name="date" required>
             </div>
+            <div class="list">
+                <label for="desc">Description</label>
+                <textarea name="desc" id="desc"  rows="4"></textarea>
+            </div>
+            <div class="img">
+                <input type="file" name="img" id="img">
+            </div>
+            <button class="btn">Save</button>
         </div>
-
-        <button>Save</button>
     </form>
     <%- include('./partials/footer') %>

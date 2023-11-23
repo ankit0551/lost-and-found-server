@@ -2,5 +2,31 @@
 <%- include('./partials/navbar') %>
 
 
+<div class="profile">
+    <div class="left">
+        <h3><%=user.name%></h3>
+        <h4><%=user.email%></h4>
+        <form action="/password/change" method="post" class="change-password">
+            <div class="pc">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="pc">
+                <label for="password-again">Confirm Password</label>
+                <input type="password" name="password-again" id="password-again" required>
+            </div>
+            <button>Change</button>
+        </form>
+    </div>
+    <div class="right">
+        <img src="<%=user.img%>" alt="profile-image">
+    </div>
+</div>
+
+<div class="my-items">
+    <div class="my-lost-items"></div>
+    <div class="my-found-items"></div>
+</div>
+
 
 <%- include('./partials/footer') %>

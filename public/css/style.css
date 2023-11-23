@@ -70,3 +70,30 @@ main .items-div .items{
     text-align: left;
     margin: 20px 0;
 }
+
+.lost-form{
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.lost-form .item-form-div{
+    width: 800px;
+    padding: 10px 12px;
+}
+
+.lost-form .item-form-div input{
+    margin-top: 4px;
+    margin-bottom: 12px;
+    width: 100%;
+    padding: 3px;
+    font-size: 1.2rem;
+}
+textarea{
+    width: 100%;
+}
+
+.lost-form .item-form-div label{
+    display: block;
+}
