@@ -4,29 +4,39 @@ const Item = require('../models/Item');
 const verifytoken = require('../middlewares/verifyTokens');
 
 
+router.get('/item/lostitem/new',verifytoken,(req,res)=>{
+    res.render('newLostItem',{req});
+})
+
+router.get('/item/founditem/new',verifytoken,(req,res)=>{
+    res.render('newFoundItem',{req});
+})
+
 // create new lost item
 
 router.post('/item/lostitem/new',verifytoken,async (req,res)=>{
     const {name,desc,loc,date} = req.body;
-    let type = false
-    await  Item.create(name,desc,loc,date,req._id,type);
-    res.status(200).json("item created successfully");
+    let ty = false;
+    let user = req.userId;
+    await  Item.create({name,desc,loc,date,user,ty});
+    res.status(200).redirect('/item/allitems');
 })
 
 // create new found item
 
 router.post('/item/founditem/new',verifytoken,async (req,res)=>{
     const {name,desc,loc,date} = req.body;
-    let type = true
-    await  Item.create(name,desc,loc,date,req._id,type);
-    res.status(200).json("item created successfully");
+    let ty = true;
+    let user = req.userId;
+    await  Item.create({name,desc,loc,date,user,ty});
+    res.status(200).redirect('/item/allitems');
 })
 
 // fetch items
 
-router.get('/item/items',verifytoken,async (req,res)=>{
+router.get('/item/allitems',async (req,res)=>{
     const items = await Item.find();
-    res.json(items);
+    res.render('item',{items,req});
 })
 
 

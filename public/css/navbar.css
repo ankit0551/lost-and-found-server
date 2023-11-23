@@ -1,0 +1,44 @@
+nav{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: sticky;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a{
+    /* border: 2px solid #333; */
+}
+
+a .lost{
+    color: white;
+    background: #333;
+    padding: 9.5px 17px;
+}
+
+a .found{
+    padding: 8px 11px;
+    border: 2px solid #333;
+}
+
+.search{
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+}
+
+.links a{
+
+}

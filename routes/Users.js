@@ -5,23 +5,29 @@ const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 const verifytoken = require("../middlewares/verifyTokens");
 
-
-
-router.get('/',verifytoken,(req, res)=>{
-    res.render('index');
+//  User profile
+router.get('/user/profile',verifytoken,async (req,res)=>{
+    const user = await User.findOne({_id:req.userId})
+    res.render('profile',{user,req});
 })
 
 
+// home route
+router.get('/',verifytoken,(req, res)=>{
+    res.render('index',{req});
+})
 
+// signup page
 router.get('/signup', async (req, res)=>{
     const token = req.cookies.token
     if(!token){
-        return res.render('signup');
+        return res.render('signup',{req});
     }
     res.redirect("/");
 })
 
 
+// signup post route
 router.post('/signup', async (req, res)=>{
     const {name , email, password} = req.body;
     const salt = await bcrypt.genSalt(5)
@@ -31,14 +37,12 @@ router.post('/signup', async (req, res)=>{
 })
 
 
-
+// login route
 router.get('/login', async (req, res)=>{
     const token = req.cookies.token
-
     if(!token){
-        return res.render('login');
+        return res.render('login',{req});
     }
-
     res.redirect("/");
     
 })

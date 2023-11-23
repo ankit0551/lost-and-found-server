@@ -1,0 +1,25 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+    <form action="/item/founditem/new" method="post" class="lost-form">
+        <div>
+            <div class="list">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="list">
+                <label for="desc">Description</label>
+                <input type="text" id="desc" name="desc" required>
+            </div>
+            <div class="list">
+                <label for="loc">Location</label>
+                <input type="text" id="loc" name="loc" required>
+            </div>
+            <div class="list">
+                <label for="date">Date</label>
+                <input type="text" id="name" name="date" required>
+            </div>
+        </div>
+
+        <button>Save</button>
+    </form>
+    <%- include('./partials/footer') %>
