@@ -4,6 +4,10 @@
 }
 
 
+img{
+    width: 100%;
+}
+
 .form{
     width: 100vw;
     display: flex;
@@ -66,21 +70,36 @@ main{
 
 main .items-div .items{
     border: 2px solid #333;
-    padding: 0 20px;
+    padding: 10px 20px;
     text-align: left;
     margin: 20px 0;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
 }
 
+main .img{
+    width: 220px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main img{
+
+}
 .lost-form{
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
 }
 
 .lost-form .item-form-div{
     width: 800px;
-    padding: 10px 12px;
+    padding: 20px 22px;
+    border: .2px solid rgb(87, 86, 86);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(94, 93, 93)
 }
 
 .lost-form .item-form-div input{
@@ -96,4 +115,49 @@ textarea{
 
 .lost-form .item-form-div label{
     display: block;
+}
+
+.item-form-div .btn{
+    background: #333;
+    color: whitesmoke;
+    padding: 15px 45px;
+}
+
+.item-form-div h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+}
+
+.profile label{
+    display: block;
+    margin-top:15px;
+    margin-bottom: 5px;
+}
+
+.profile form{
+    width: 200px;
+}
+
+.profile form input{
+    width: 200px;
+    padding: 3px 2px;
+}
+
+.profile .btn{
+    font-size: 1rem;
+    color: white;
+    background: #333;
+}
+
+.profile img{
+    width: 200px;
+    
 }

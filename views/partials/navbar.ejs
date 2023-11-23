@@ -1,9 +1,10 @@
+
 <nav>
     <div class="logo"><a href="/"><span class="lost">LOST</span><span class="found">FOUND</span></a></div>
     <div class="search">
-        <form action="">
+        <!-- <form action="">
             <input type="text">
-        </form>
+        </form> -->
     </div>
     <div class="links">
         
@@ -11,13 +12,15 @@
         <a href="/signup">Sign up</a>
         <a href="/login">Login</a>
         <% } %>
+
         <% if(req.userId){ %>
-            <a href="/logout">Logout</a>
+        <a href="/logout">Logout</a>
+        <a href="/item/lostitem/new">Lost</a>
+        <a href="/item/founditem/new">Found</a>
         <% } %>
         
         <a href="/item/allitems">All Items</a>
-        <a href="/item/lostitem/new">Lost</a>
-        <a href="/item/founditem/new">Found</a>
+        
         <% if(req.userId){ %>
             <a href="/user/profile">Profile</a>
         <% } %>

@@ -1,33 +1,67 @@
 <%- include('./partials/header') %>
-<%- include('./partials/navbar') %>
-    <main>
-        <div class="lost-items items-div">
-            <h2>Lost Items</h2>
-            <% for(let item of items){ %>
-                <% if(!item.ty){ %>
-                    <div class="items">
-                        <h3><%= item.name %></h3>
-                        <p><%= item.desc %></p>
-                        <p><%= item.date %></p>
-                        <p><%= item.loc %></p>
-                        <p><%= item.user %></p>
-                    </div>
-               <% } %>
-            <% } %>
-        </div>
-        <div class="found-items items-div">
-            <h2>Found Items</h2>
-            <% for(let item of items){ %>
-                <% if(item.ty){ %>
-                <div class="items">
-                    <h3><%= item.name %></h3>
-                    <p><%= item.desc %></p>
-                    <p><%= item.date %></p>
-                    <p><%= item.loc %></p>
-                    <p><%= item.user %></p>
-                </div>
-                <% } %>
-            <% } %>
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
+    <%- include('./partials/navbar') %>
+        <main>
+            <div class="lost-items items-div">
+                <h2>Lost Items</h2>
+                <% for(let item of items){ %>
+                    <% if(!item.ty){ %>
+                        <div class="items">
+                            <div class="dit">
+                                <h3>
+                                    <%= item.name %>
+                                </h3>
+                                <p>
+                                    <%= item.desc %>
+                                </p>
+                                <p>
+                                    <%= item.date %>
+                                </p>
+                                <p>
+                                    <%= item.loc %>
+                                </p>
+                                <p>
+                                    <%= item.user %>
+                                </p>
+                            </div>
+                            <div class="img">
+                                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"
+                                    alt="img">
+                            </div>
+
+                        </div>
+                        <% } %>
+                            <% } %>
+            </div>
+            <div class="found-items items-div">
+                <h2>Found Items</h2>
+                <% for(let item of items){ %>
+                    <% if(item.ty){ %>
+                        <div class="items">
+                            <div class="dit">
+                                <h3>
+                                    <%= item.name %>
+                                </h3>
+                                <p>
+                                    <%= item.desc %>
+                                </p>
+                                <p>
+                                    <%= item.date %>
+                                </p>
+                                <p>
+                                    <%= item.loc %>
+                                </p>
+                                <p>
+                                    <%= item.user %>
+                                </p>
+                            </div>
+                            <div class="img">
+                                <img src="https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg"
+                                    alt="img">
+                            </div>
+
+                        </div>
+                        <% } %>
+                            <% } %>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
